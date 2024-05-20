@@ -50,7 +50,7 @@
   display: inline-block;
   height: 45px;
   color: #fffefe;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: 0px;
   background: rgb(101, 101, 101, 1);
   outline: none;
@@ -82,11 +82,11 @@ input:focus {
   margin-bottom: 1rem;
 }
 
-.form-group-password.form-group label {
+.form-group label {
   display: block;
   margin-bottom: 0.5rem;
 }
-.passwordInput{
+.form-group-password Input{
     border: none;
   background: rgb(101, 101, 101, 1);
   width: 100%;
@@ -107,10 +107,13 @@ input:focus {
   color: white;
 }
 
-.form-group-password.form-group input.error {
+.form-group input.error {
   border-color: #e74c3c;
 }
-
+.form-group-password Input.error{
+    border-color: #e74c3c;
+    /* background:rgb(101, 101, 101, 1) ; */
+}
 .error-message {
   color: #e74c3c;
   font-size: 0.875rem;
