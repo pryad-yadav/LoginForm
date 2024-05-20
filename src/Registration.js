@@ -8,7 +8,6 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
-  const [msg,setmsg]=useState("");
   const [showPassword, setShowPassword] = useState(false);
     const validate = () => {
       const errors = {};
