@@ -36,17 +36,20 @@ const Register = () => {
       event.preventDefault();
       if (validate()) {
         const user = { name, email, password };
-        const isuserExisting=localStorage.getItem('user').includes(name)
-        // ?alert("existing user"): localStorage.setItem('user', JSON.stringify(user));;
-       if(!isuserExisting){
-           localStorage.setItem('user', JSON.stringify(user))
-           alert("User registered successfully");
-        }else{
+        const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
 
-            alert("existing user")
+        const isUserExisting = existingUsers.some(
+          (existingUser) => existingUser.name === name || existingUser.email === email
+        );
+  
+        if (!isUserExisting) {
+          existingUsers.push(user);
+          localStorage.setItem('users', JSON.stringify(existingUsers));
+          alert("User registered successfully");
+        } else {
+          alert("User already exists");
         }
-
-        console.log('User registered:', user,isuserExisting);
+        console.log('User registered:', user,isUserExisting);
         // setmsg("User registered successfully");
         setName("");
         setEmail("");
