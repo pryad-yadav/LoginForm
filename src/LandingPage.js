@@ -15,10 +15,12 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
+        <div className="landing-Innercontainer">
       <h1>Welcome to Our Application</h1>
       <div className="button-group">
         <button onClick={handleLoginClick} className="landing-button">Login</button>
         <button onClick={handleRegisterClick} className="landing-button">Register</button>
+      </div>
       </div>
     </div>
   );

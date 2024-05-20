@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Registration.css";
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
   const [msg,setmsg]=useState("");
+  const [showPassword, setShowPassword] = useState(false);
     const validate = () => {
       const errors = {};
       
@@ -55,7 +56,7 @@ const Register = () => {
   
     return (
       <div className="register-container">
-
+<div className='register-Innercontainer'>
         <form onSubmit={handleSubmit} className="register-form">
         <h1 style={{fontWeight:"bolder" ,color:"white"}}>Register</h1>
           <div className="form-group">
@@ -78,19 +79,39 @@ const Register = () => {
             />
             {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
-          <div className="form-group">
+          <div className="form-group-password" >
+            {/* <label htmlFor="password">Password</label> */}
             <input
-              type="password"
-              placeholder="Password"
+               type={showPassword ? 'text' : 'password'}
+              id="password"
               value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className={errors.password ? 'error' : ''}
+              onChange={(e) => setPassword(e.target.value)}
+              className={errors.password ? "error" : "passwordInput"}
+              placeholder="Password"
+
             />
+
+<span
+       
+        style={{
+          position: 'absolute',
+          right: '10px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          cursor: 'pointer',
+        }}
+      
+            className="password-toggle-icon"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
             {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
           <button type="submit">Register</button>
         <Link to="/login" className="login-link">Already have an account? Log in!</Link>
         </form>
+        </div>
       </div>
     );
   };

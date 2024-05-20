@@ -1,94 +1,140 @@
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://t3.ftcdn.net/jpg/01/81/20/94/360_F_181209420_P2Pa9vacolr2uIOwSJdCq4w5ydtPCAsS.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 1;
+}
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #2D2D2D;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #2d2d2d;
+  flex-direction: column;
+  overflow: hidden;
+}
+.login-Innercontainer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
 
-  }
-  .login-Innercontainer{
-    display: flex;
-    flex-direction: column;
-  }
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #868686;
+}
+.register-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+::placeholder {
+  color: rgb(226, 226, 226);
+  /* opacity: 1;  */
+  font-weight: lighter;
+}
+.form-group-password {
+    width: 100%;
+  position: relative;
+  display: inline-block;
+  height: 45px;
+  color: #fffefe;
+  font-weight: bold;
+  border: 0px;
+  background: rgb(101, 101, 101, 1);
+  outline: none;
+  
+  
+}
+.form-group-password:focus{
+    outline: none;
+}
+input:focus {
+  outline: none;
+}
+.login-form {
+  /* background: rgba(150, 150, 150, 0.498); */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: 100%;
+  background: rgba(114, 114, 114, 0.53);
+  opacity: 0.9;
+}
 
-  .register-link{
-    color: #868686;
-    margin-top: 1rem;
-  }
-  .register-link:hover{
-    color: #fff;
-    text-decoration: underline;
-  }
-  ::placeholder {
-    color: rgb(226, 226, 226);
-    /* opacity: 1;  */
-    font-weight: lighter;
-  }
-  input{
-    height: 45px;
-    color:#fffefe;
-    font-weight: bold;
+.login-form h2 {
+  margin-bottom: 1rem;
+}
+
+.form-group .form-group-password {
+  margin-bottom: 1rem;
+}
+
+.form-group-password.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.passwordInput{
     border: none;
-    background: rgb(101, 101, 101,1);
-    /* background: rgba(240, 240, 240, 0.644); */
-    /* opacity: 0.9; */
-    border: none !important;
-  }
-  .login-form {
-    /* background: rgba(150, 150, 150, 0.498); */
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgb(101, 101, 101, 1);
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+}
+.form-group input {
+  border: none;
+  background: rgb(101, 101, 101, 1);
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.form-group-password.form-group input.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff6a65;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f55c56;
+}
+/* .password-container {
+    position: relative;
     width: 300px;
-    max-width: 100%;
-    background: rgba(114, 114, 114, 0.53);
-    opacity: 0.9;
-  }
-  
-  .login-form h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .form-group input.error {
-    border-color: #e74c3c;
-  }
-  
-  .error-message {
-    color: #e74c3c;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-  }
-  
-  button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #ff6a65;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #F55C56;
-  }
-  
+  } */
+
+/* Password field styles */
+/*  */
