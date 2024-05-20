@@ -27,14 +27,16 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
-      const storedUser = JSON.parse(localStorage.getItem("user"));
+      const storedUser = JSON.parse(localStorage.getItem("users"));
       if (storedUser) {
         if (storedUser.email === email && storedUser.password === password) {
           console.log("Login successful");
+          alert("Login successful")
           setLoginError("");
           // Proceed with login
         } else {
           setLoginError("Invalid email or password");
+          
         }
       } else {
         setLoginError("No user found, please register first");
