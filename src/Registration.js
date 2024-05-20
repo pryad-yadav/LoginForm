@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Registration.css";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { IoEyeOffOutline } from "react-icons/io5";
+import { ImEye } from "react-icons/im";
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -104,7 +105,7 @@ const Register = () => {
             className="password-toggle-icon"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
+            {showPassword ?<IoEyeOffOutline /> : <ImEye />}
           </span>
             {errors.password && <span className="error-message">{errors.password}</span>}
           </div>

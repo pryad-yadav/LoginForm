@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
-// import { ImEye } from "react-icons/im";
-// import { BsFillEyeFill } from "react-icons/bs";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { ImEye } from "react-icons/im";
+import { IoEyeOffOutline } from "react-icons/io5";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -97,7 +96,7 @@ const Login = () => {
             className="password-toggle-icon"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
+            {showPassword ?<IoEyeOffOutline /> : <ImEye />}
           </span>
             {errors.password && (
               <span className="error-message">{errors.password}</span>
