@@ -29,15 +29,17 @@ const Login = () => {
     if (validate()) {
       const storedUser = JSON.parse(localStorage.getItem("users"));
       if (storedUser) {
-        if (storedUser.email === email && storedUser.password === password) {
-          console.log("Login successful");
-          alert("Login successful")
-          setLoginError("");
-          // Proceed with login
-        } else {
-          setLoginError("Invalid email or password");
-          
-        }
+        console.log(storedUser, "sssss");
+        storedUser.map((user) => {
+          console.log(user);
+          if (user.email === email && user.password === password) {
+            console.log("Login successful");
+            alert("Login successful");
+            setLoginError("");
+          } else {
+            setLoginError("Invalid email or password");
+          }
+        });
       } else {
         setLoginError("No user found, please register first");
       }
@@ -46,8 +48,8 @@ const Login = () => {
 
   return (
     <div className="login-container">
-        <div className="login-Innercontainer">
-      <form onSubmit={handleSubmit} className="login-form">
+      <div className="login-Innercontainer">
+        <form onSubmit={handleSubmit} className="login-form">
           <h2
             style={{ marginLeft: "40%", fontWeight: "bolder", color: "white" }}
           >
@@ -73,33 +75,30 @@ const Login = () => {
       <i id="eye-icon" class="fas fa-eye"></i>
     </span>
   </div> */}
-          <div className="form-group-password" >
+          <div className="form-group-password">
             {/* <label htmlFor="password">Password</label> */}
             <input
-               type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={errors.password ? "error" : "passwordInput"}
               placeholder="Password"
-
             />
 
-<span
-       
-        style={{
-          position: 'absolute',
-          right: '10px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          cursor: 'pointer',
-        }}
-      
-            className="password-toggle-icon"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ?<IoEyeOffOutline /> : <ImEye />}
-          </span>
+            <span
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+              }}
+              className="password-toggle-icon"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <IoEyeOffOutline /> : <ImEye />}
+            </span>
             {errors.password && (
               <span className="error-message">{errors.password}</span>
             )}
@@ -109,8 +108,8 @@ const Login = () => {
           <Link to="/register" className="register-link">
             Don't have an account?Register
           </Link>
-      </form>
-        </div>
+        </form>
+      </div>
       {/* <button >Register</button> */}
     </div>
   );
