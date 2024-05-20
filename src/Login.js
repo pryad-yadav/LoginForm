@@ -32,13 +32,11 @@ const Login = () => {
         console.log(storedUser, "sssss");
         storedUser.map((user) => {
           console.log(user);
-          if (user.email === email && user.password === password) {
-            console.log("Login successful");
-            alert("Login successful");
-            setLoginError("");
-          } else {
-            setLoginError("Invalid email or password");
-          }
+
+          return (user.email === email && user.password === password
+            ? ((console.log("Login successful"), alert("Login successful")),
+              setLoginError(""))
+            : setLoginError("Invalid email or password"))
         });
       } else {
         setLoginError("No user found, please register first");
